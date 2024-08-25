@@ -1,15 +1,15 @@
 import {
+  afterAll,
+  afterEach,
   beforeAll,
   beforeEach,
-  afterEach,
-  afterAll,
   describe,
-  test,
   expect,
+  test,
 } from "@jest/globals";
-import { models, sequelize } from "../../../src/models";
 import { validate } from "uuid";
 import seedMensagens from "../../../database/seeders/20240815191333-mensagens";
+import { models, sequelize } from "../../../src/models";
 
 let dataMensagens;
 

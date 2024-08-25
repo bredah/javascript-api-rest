@@ -1,7 +1,7 @@
-import { beforeAll, afterAll, describe, test, expect } from "@jest/globals";
-import Mensagem from "../../../src/models/mensagem";
-import sequelize from "../../../src/config/databaseFactory";
+import { afterAll, beforeAll, describe, expect, test } from "@jest/globals";
 import { validate } from "uuid";
+import sequelize from "../../../src/config/databaseFactory";
+import Mensagem from "../../../src/models/mensagem";
 
 beforeAll(async () => {
   Mensagem.init(sequelize);
@@ -139,6 +139,26 @@ describe("modelo: mensagem", () => {
       expect(mensagemEncontrada).toBeNull();
     });
   });
+
+  describe("contexto: listar", ()=>{
+    test("deve permitir listar todas as mensagens", async ()=>{
+      const mensagemData = {
+        usuario: "usuario_00",
+        conteudo: "Olá, mundo!",
+      }; 
+      await Mensagem.create(mensagemData);
+      await Mensagem.create(mensagemData);
+
+      const msgEncontradas = await Mensagem.findAll()
+      expect(msgEncontradas.length).toBe(2);
+      
+    })
+    test("deve permitir listar todas as mensagens mesmo que existam", async ()=>{
+      const msgEncontradas = await Mensagem.findAll()
+      expect(msgEncontradas.length).toBe(0);
+    })
+  })
+
 
   describe("contexto: remover", () => {
     test("deve permitir remover uma mensagem existente", async () => {

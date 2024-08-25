@@ -22,13 +22,13 @@ class DataBaseFactory {
             },
           }
         : {
-            database: process.env.DB_NAME,
             username: process.env.DB_USERNAME,
             password: process.env.DB_PASSWORD,
             options: {
-              dialect: process.env.DB_HOST,
+              dialect: process.env.DB_DIALECT,
               host: process.env.DB_HOST,
               port: process.env.DB_PORT,
+              database: process.env.DB_NAME,
               sync: process.env.DB_SYNC === "true" || false,
               logging: process.env.DB_LOGGING === "true" || false,
             },

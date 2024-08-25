@@ -1,0 +1,32 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "app",
+      "database": "app",
+      "username": "root",
+      "password": "toor"
+    }
+  ],
+  "jest.enable": true,
+  "jest.virtualFolders": [
+    {
+      "name": "unit tests",
+      "jestCommandLine": "npm run test --",
+      "runMode": "on-demand"
+    },
+    {
+      "name": "integration tests",
+      "jestCommandLine": "npm run test:integration --",
+      "runMode": "on-demand"
+    },
+    {
+      "name": "system tests",
+      "jestCommandLine": "npm run test:system --",
+      "runMode": "on-demand"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 "use strict";
-import { Model, DataTypes } from "sequelize";
+import { DataTypes, Model } from "sequelize";
 
 class Mensagem extends Model {
   static init(sequelize) {
