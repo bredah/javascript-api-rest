@@ -69,6 +69,7 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
+.coverage
 coverage
 *.lcov
 
@@ -211,3 +212,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Allure Report
+allure-results
